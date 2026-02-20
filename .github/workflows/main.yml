@@ -17,7 +17,8 @@ jobs:
 
       - name: Download SDK
         run: |
-          curl -LO https://github.com/theos/sdks/releases/download/current/iPhoneOS16.5.sdk.tar.xz
+          curl -L -o iPhoneOS16.5.sdk.tar.xz "https://github.com/theos/sdks/releases/download/current/iPhoneOS16.5.sdk.tar.xz"
+          mkdir -p $THEOS/sdks
           tar -xf iPhoneOS16.5.sdk.tar.xz -C $THEOS/sdks
 
       - name: Compile dylib
